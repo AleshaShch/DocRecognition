@@ -11,7 +11,7 @@
 
 ## <a name="usecase_diagram"> 1. Диаграмма вариантов использования </a>
 
-![usecasediagram](Diagrams/UseCaseDiagram.png)
+![usecasediagram](UseCaseDiagram.png)
 
 ## <a name="actors"> 2. Актёры </a>
 
