@@ -15,49 +15,52 @@
     <session id="1465203902">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="7" />
+          <entry key="jpg" value="1" />
+          <entry key="py" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="7" />
+          <entry key="Image" value="1" />
+          <entry key="Python" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="82" />
           <entry key="dummy" value="3" />
-          <entry key="py" value="1592" />
+          <entry key="py" value="4366" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="1674" />
+          <entry key="Python" value="4448" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc_recognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="321">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1541589748172" expanded="true" signature="80:85" ph="..." />
-                <marker date="1541589748172" expanded="true" signature="116:207" ph="..." />
-                <marker date="1541589748172" expanded="true" signature="369:545" ph="..." />
+                <marker date="1541934964425" expanded="true" signature="118:123" ph="..." />
+                <marker date="1541934964425" expanded="true" signature="154:245" ph="..." />
+                <marker date="1541934964425" expanded="true" signature="561:623" ph="..." />
               </folding>
             </state>
           </provider>
@@ -66,13 +69,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/credit_card.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="850">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               <folding>
-                <marker date="1541588146122" expanded="true" signature="17:22" ph="..." />
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1541948454721" expanded="true" signature="323:2000" ph="..." />
+                <marker date="1541948454721" expanded="true" signature="948:1143" ph="..." />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OCR-B.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -91,15 +101,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DocRecognition.py" />
-        <option value="$PROJECT_DIR$/credit_card.py" />
         <option value="$PROJECT_DIR$/doc_recognition.py" />
+        <option value="$PROJECT_DIR$/credit_card.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -121,6 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,10 +143,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="CV_32F&#9;null&#9;null" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -171,7 +182,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doc_recognition.py" />
-      <option name="PARAMETERS" value="-i C:\Users\Alesha\Desktop\credit_card.jpg" />
+      <option name="PARAMETERS" value="-i C:\Users\Alesha\Desktop\credit_card1.jpg" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -204,6 +215,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -232,11 +244,17 @@
       <configuration name="PythonConfigurationType">
         <watch expression="import_" />
         <watch expression="DocRecognition" language="Python" />
+        <watch expression="property" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>property</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>DocRecognition</expression-string>
         <language-id>Python</language-id>
@@ -252,35 +270,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/codecs.py">
+    <entry file="file://$USER_HOME$/Downloads/template-matching-ocr/template-matching-ocr/ocr_template_match.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        <state relative-caret-position="236">
+          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/credit_card.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-          <folding>
-            <marker date="1541588146122" expanded="true" signature="17:22" ph="..." />
-          </folding>
+        <state relative-caret-position="226">
+          <caret line="326" column="20" lean-forward="true" selection-start-line="326" selection-start-column="20" selection-end-line="326" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-421829738/cv2/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="1086" selection-start-line="1086" selection-end-line="1086" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc_recognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="321">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1541589748172" expanded="true" signature="80:85" ph="..." />
-            <marker date="1541589748172" expanded="true" signature="116:207" ph="..." />
-            <marker date="1541589748172" expanded="true" signature="369:545" ph="..." />
+            <marker date="1541934964425" expanded="true" signature="118:123" ph="..." />
+            <marker date="1541934964425" expanded="true" signature="154:245" ph="..." />
+            <marker date="1541934964425" expanded="true" signature="561:623" ph="..." />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credit_card.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1541948454721" expanded="true" signature="323:2000" ph="..." />
+            <marker date="1541948454721" expanded="true" signature="948:1143" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCR-B.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>
