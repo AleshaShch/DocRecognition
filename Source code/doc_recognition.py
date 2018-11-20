@@ -6,11 +6,12 @@ import imutils
 
 
 class DocRecognition:
-    IMAGE_WIDTH = 600
+    IMAGE_WIDTH = 300
 
     def __init__(self, image=None):
         self.__set_image(image)
         self._credit_card = credit_card.CreditCard()
+        self.__recognition_result = None
 
     def __set_image(self, image):
         self.__image = image
@@ -24,7 +25,10 @@ class DocRecognition:
         self.__set_image(imutils.resize(image=image, width=self.IMAGE_WIDTH))
 
     def credit_card_recognition(self):
-        self._credit_card.image_filtering(self.__image)
+        image = self._credit_card.image_filtering(self.__image)
+        contours = self._credit_card.find_informational_fields(image)
+        fields = self._credit_card.split_information_fiels(contours)
+        self.__recognition_result = self._credit_card.recognize_characters(fields, self.__image)
 
     def get_recognition_result(self):
         pass

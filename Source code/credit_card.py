@@ -1,12 +1,13 @@
 import cv2
-import imutils
 import numpy
-from imutils import contours
+from imutils import contours as cntrs
 
 
 class CreditCard:
-    OCR_THRESH_VALUE = 45
+    OCR_THRESH_VALUE = 30
     OCR_THRESH_MAXVALUE = 255
+    CHARACTER_WIDTH = 22
+    CHARACTER_HIGH = 34
 
     def __set_ocr_image(self, image):
         self.__ocr_image = image
@@ -14,17 +15,24 @@ class CreditCard:
     def __get_ocr_image(self):
         return self.__ocr_image
 
+    def __draw_all_contours(self, image, contours):
+        cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
+        cv2.imshow("Image with all contours", image)
+        cv2.waitKey(0)
+
     ocr_image = property(__get_ocr_image)
 
     def get_template_characters(self):
-        self.__set_ocr_image(cv2.imread("OCR-B.jpg"))
+        self.__set_ocr_image(cv2.imread("OCR-A_1.png"))
         ocr_image = self.ocr_image_filtering(self.__get_ocr_image())
         characters_contours = cv2.findContours(ocr_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
-        characters_contours = contours.sort_contours(characters_contours, method="left-to-right")[0]
+        characters_contours = cntrs.sort_contours(characters_contours, method="left-to-right")[0]
+
         characters = {}
         for (i, c) in enumerate(characters_contours):
             (x, y, w, h) = cv2.boundingRect(c)
-            characters[i] = ocr_image[y:y + w, x:x + h]
+            characters[i] = ocr_image[y:y + h, x:x + w]
+            characters[i] = cv2.resize(characters[i], (self.CHARACTER_WIDTH, self.CHARACTER_HIGH))
         return characters
 
     def ocr_image_filtering(self, image):
@@ -33,8 +41,9 @@ class CreditCard:
         return image
 
     def image_filtering(self, image):
-        rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (9, 3))
+        rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (6, 3))
         sq_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         image = cv2.morphologyEx(image, cv2.MORPH_TOPHAT, rect_kernel)
 
@@ -48,3 +57,61 @@ class CreditCard:
         thresh = cv2.threshold(grad_x, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
         thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, sq_kernel)
         return thresh
+
+    def find_informational_fields(self, image):
+        contours = cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
+        contours = cntrs.sort_contours(contours, method="top-to-bottom")[0]
+        return contours
+
+    def split_information_fiels(self, contours):
+        fields = []
+        y_field_number = 300
+
+        for (i, c) in enumerate(contours):
+            (x, y, w, h) = cv2.boundingRect(c)
+            ratio = w / float(h)
+            if 2.5 < ratio < 4.0:
+                if 40 < w < 60 and 10 < h < 20:
+                    fields.append((x, y, w, h))
+                    y_field_number = y
+                    if len(fields) == 4:
+                        fields.sort()
+            elif ratio > 3 and y > y_field_number and x < fields[2][0] + fields[2][2]:
+                fields.append((x, y, w, h))
+
+        fields = sorted(fields, key=lambda contour: contour[1])
+        return fields
+
+    def recognize_characters(self, fields, source_image):
+        characters = []
+        image = cv2.cvtColor(source_image, cv2.COLOR_BGR2GRAY)
+        template_characters = self.get_template_characters()
+
+        for (i, (x, y, w, h)) in enumerate(fields):
+            character_group = image[y - 5: y + h + 5, x - 5: x + w + 5]
+            character_group = cv2.threshold(character_group, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+
+            character_contours = cv2.findContours(character_group.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
+            character_contours = cntrs.sort_contours(character_contours, method="left-to-right")[0]
+
+            for c in character_contours:
+                recognize_group = []
+                (character_x, character_y, character_w, character_h) = cv2.boundingRect(c)
+                character_roi = character_group[character_y: character_y + character_h, character_x: character_x +
+                                                character_w]
+                character_roi = cv2.resize(character_roi, (self.CHARACTER_WIDTH, self.CHARACTER_HIGH))
+                matches = []
+                for (character, character_template) in template_characters.items():
+                    result = cv2.matchTemplate(character_roi, character_template, cv2.TM_CCOEFF)
+                    (_, coincidence, _, _) = cv2.minMaxLoc(result)
+                    matches.append(coincidence)
+
+                recognize_group.append(numpy.argmax(matches))
+                char = recognize_group.pop()
+                if char > 9:
+                    characters.extend(chr(char + 55))
+                else:
+                    characters.extend(str(char))
+
+        information = {'number': characters[0:16], 'name': characters[16:]}
+        return information
