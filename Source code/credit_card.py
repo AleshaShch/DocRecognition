@@ -1,5 +1,5 @@
-import cv2
 import numpy
+import cv2
 from imutils import contours as cntrs
 
 
@@ -9,16 +9,22 @@ class CreditCard:
     CHARACTER_WIDTH = 22
     CHARACTER_HIGH = 34
 
+    def __init__(self):
+        self.__recognition_report = []
+        self.__source_image = None
+
     def __set_ocr_image(self, image):
         self.__ocr_image = image
 
     def __get_ocr_image(self):
         return self.__ocr_image
 
+    def __add_file_to_report(self, image):
+        self.__recognition_report.append(image)
+
     def __draw_all_contours(self, image, contours):
         cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
-        cv2.imshow("Image with all contours", image)
-        cv2.waitKey(0)
+        return image
 
     ocr_image = property(__get_ocr_image)
 
@@ -44,8 +50,12 @@ class CreditCard:
         rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (6, 3))
         sq_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 
+        self.__source_image = image
+        self.__add_file_to_report(image)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        self.__add_file_to_report(image)
         image = cv2.morphologyEx(image, cv2.MORPH_TOPHAT, rect_kernel)
+        self.__add_file_to_report(image)
 
         grad_x = cv2.Sobel(image, ddepth=cv2.CV_32F, dx=1, dy=0, ksize=-1)
         grad_x = numpy.absolute(grad_x)
@@ -54,13 +64,16 @@ class CreditCard:
         grad_x = grad_x.astype("uint8")
 
         grad_x = cv2.morphologyEx(grad_x, cv2.MORPH_CLOSE, rect_kernel)
+        self.__add_file_to_report(grad_x)
         thresh = cv2.threshold(grad_x, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
         thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, sq_kernel)
+        self.__add_file_to_report(thresh)
         return thresh
 
     def find_informational_fields(self, image):
         contours = cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
         contours = cntrs.sort_contours(contours, method="top-to-bottom")[0]
+        self.__add_file_to_report(self.__draw_all_contours(self.__source_image.copy(), contours))
         return contours
 
     def split_information_fiels(self, contours):
@@ -115,3 +128,6 @@ class CreditCard:
 
         information = {'number': characters[0:16], 'name': characters[16:]}
         return information
+
+    def get_recognition_report(self):
+        return self.__recognition_report
