@@ -22,7 +22,8 @@ class CreditCard:
     def __add_file_to_report(self, image):
         self.__recognition_report.append(image)
 
-    def __draw_all_contours(self, image, contours):
+    @staticmethod
+    def draw_all_contours(image, contours):
         cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
         return image
 
@@ -73,10 +74,11 @@ class CreditCard:
     def find_informational_fields(self, image):
         contours = cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
         contours = cntrs.sort_contours(contours, method="top-to-bottom")[0]
-        self.__add_file_to_report(self.__draw_all_contours(self.__source_image.copy(), contours))
+        self.__add_file_to_report(self.draw_all_contours(self.__source_image.copy(), contours))
         return contours
 
-    def split_information_fiels(self, contours):
+    @staticmethod
+    def split_informational_fields(contours):
         fields = []
         y_field_number = 300
 

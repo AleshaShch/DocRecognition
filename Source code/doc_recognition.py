@@ -29,7 +29,7 @@ class DocRecognition:
     def credit_card_recognition(self):
         image = self._credit_card.image_filtering(self.__image)
         contours = self._credit_card.find_informational_fields(image)
-        fields = self._credit_card.split_information_fiels(contours)
+        fields = self._credit_card.split_informational_fields(contours)
         self.__recognition_result = self._credit_card.recognize_characters(fields, self.__image)
 
     def get_recognition_result(self, arguments):
