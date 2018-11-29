@@ -1,35 +1,69 @@
+"""
+This module defines class that provides credit card recognition.
+"""
+
 import numpy
 import cv2
 from imutils import contours as cntrs
 
 
 class CreditCard:
+    """
+    The CreditCard class allows to recognize credit card.
+    """
+
+    # Variables with simple values
     OCR_THRESH_VALUE = 30
     OCR_THRESH_MAXVALUE = 255
     CHARACTER_WIDTH = 22
     CHARACTER_HIGH = 34
 
     def __init__(self):
+        """
+        Constructor of the CreditCard class.
+        """
         self.__recognition_report = []
         self.__source_image = None
 
     def __set_ocr_image(self, image):
+        """
+        Set the source image of OCR-A.
+        :param image: source image of OCR-A.
+        """
         self.__ocr_image = image
 
     def __get_ocr_image(self):
+        """
+        Get the source image of OCR-A.
+        :return: source image of OCR-A.
+        """
         return self.__ocr_image
 
     def __add_file_to_report(self, image):
+        """
+        Add image to the recognition report.
+        :param image: image of credit card.
+        """
         self.__recognition_report.append(image)
 
     @staticmethod
     def draw_all_contours(image, contours):
+        """
+        Draw information fields or characters contours to credit card image.
+        :param image: image of credit card;
+        :param contours: information fields or characters contours;
+        :return: credit card image with contours.
+        """
         cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
         return image
 
     ocr_image = property(__get_ocr_image)
 
     def get_template_characters(self):
+        """
+        Get characters contours from OCR-A image.
+        :return: formulaic characters contours.
+        """
         self.__set_ocr_image(cv2.imread("OCR-A_1.png"))
         ocr_image = self.ocr_image_filtering(self.__get_ocr_image())
         characters_contours = cv2.findContours(ocr_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
@@ -43,11 +77,21 @@ class CreditCard:
         return characters
 
     def ocr_image_filtering(self, image):
+        """
+        Filter the OCR-A image.
+        :param image: OCR-A image.
+        :return: filtered image.
+        """
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         image = cv2.threshold(image, self.OCR_THRESH_VALUE, self.OCR_THRESH_MAXVALUE, cv2.THRESH_BINARY_INV)[1]
         return image
 
     def image_filtering(self, image):
+        """
+        Filter the credit card image.
+        :param image: credit card image.
+        :return:  filtered image.
+        """
         rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (6, 3))
         sq_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 
@@ -79,6 +123,11 @@ class CreditCard:
 
     @staticmethod
     def split_informational_fields(contours):
+        """
+        Distinguish only informational fields from all contours.
+        :param contours: contours of the credit card image that consist characters.
+        :return: contours of informational fields.
+        """
         fields = []
         y_field_number = 300
 
@@ -98,6 +147,13 @@ class CreditCard:
         return fields
 
     def recognize_characters(self, fields, source_image):
+        """
+        Recognize informational fields of credit card image based on comparison distinguish characters from credit card
+        image and template characters from OCR-A image.
+        :param fields: contours of informational fields;
+        :param source_image: credit card image;
+        :return: recognized characters;
+        """
         characters = []
         image = cv2.cvtColor(source_image, cv2.COLOR_BGR2GRAY)
         template_characters = self.get_template_characters()
@@ -132,4 +188,8 @@ class CreditCard:
         return information
 
     def get_recognition_report(self):
+        """
+        Get report of credit card recognition.
+        :return: report of credit card recognition.
+        """
         return self.__recognition_report
