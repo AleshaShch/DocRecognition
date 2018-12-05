@@ -15,38 +15,41 @@
     <session id="1465203902">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="9" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="4" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.open.time.8" value="5" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="jpg" value="2" />
-          <entry key="py" value="36" />
+          <entry key="jpg" value="3" />
+          <entry key="png" value="1" />
+          <entry key="py" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="2" />
-          <entry key="Python" value="36" />
+          <entry key="Image" value="4" />
+          <entry key="Python" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="82" />
           <entry key="dummy" value="3" />
-          <entry key="py" value="12806" />
+          <entry key="py" value="13046" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="12888" />
+          <entry key="Python" value="13128" />
         </counts>
       </usages-collector>
     </session>
@@ -55,7 +58,38 @@
     <favorites_list name="Source code" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/credit_card.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3043">
+              <caret line="181" column="28" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc_recognition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/test_DocRecognition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,8 +105,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DocRecognition.py" />
-        <option value="$PROJECT_DIR$/doc_recognition.py" />
         <option value="$PROJECT_DIR$/credit_card.py" />
+        <option value="$PROJECT_DIR$/doc_recognition.py" />
+        <option value="$PROJECT_DIR$/test_DocRecognition.py" />
+        <option value="$PROJECT_DIR$/tests/test_DocRecognition.py" />
       </list>
     </option>
   </component>
@@ -101,7 +137,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,22 +146,23 @@
             </path>
             <path>
               <item name="Source code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Source code" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Source code" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="numpy&#9;null&#9;null&#10;bits&#9;null&#9;null&#10;cv2&#9;FILE&#9;file://C:/Users/Alesha/.PyCharmCE2018.2/system/python_stubs/-421829738/cv2&#10;sys&#9;null&#9;null&#10;CV_32F&#9;null&#9;null" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -147,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Unittests in test_DocRecognition.py">
     <configuration name="DocRecognition" type="PythonConfigurationType" factoryName="Python">
       <module name="Source code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,7 +197,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doc_recognition.py" />
-      <option name="PARAMETERS" value="-i C:\Users\Alesha\Desktop\credit_card3.png -r C:\Users\Alesha\Desktop\report" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -169,6 +205,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test_DocRecognition.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Source code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_DocRecognition.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.DocRecognition" />
+      <item itemvalue="Python tests.Unittests in test_DocRecognition.py" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests in test_DocRecognition.py" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -182,6 +241,20 @@
       <updated>1541541970511</updated>
     </task>
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_test_DocRecognition_py - 2018.12.05 at 04h 33m 27s.xml">
+      <configuration name="Unittests in test_DocRecognition.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_DocRecognition_py - 2018.12.05 at 04h 43m 07s.xml">
+      <configuration name="Unittests in test_DocRecognition.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_DocRecognition_py - 2018.12.05 at 04h 43m 12s.xml">
+      <configuration name="Unittests in test_DocRecognition.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_DocRecognition_py - 2018.12.05 at 04h 43m 19s.xml">
+      <configuration name="Unittests in test_DocRecognition.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -200,13 +273,13 @@
       <window_info id="Favorites" order="2" sideWeight="0.5023585" side_tool="true" weight="0.060145408" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.16997167" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42492917" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4036827" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -299,9 +372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OCR-B.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -344,28 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc_recognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="86" column="48" lean-forward="true" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-          <folding>
-            <marker date="1543484884013" expanded="true" signature="334:339" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/credit_card.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1543489260721" expanded="true" signature="1416:1505" ph="..." />
-            <marker date="1543489260721" expanded="true" signature="2513:2708" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/bitstring.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -380,10 +428,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/template-matching-ocr/template-matching-ocr/ocr_template_match.py">
+    <entry file="file://$USER_HOME$/Downloads/template-matching-ocr/template-matching-ocr/ocr_template_match.py" />
+    <entry file="file://$PROJECT_DIR$/OCR-B.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_DocRecognition.py" />
+    <entry file="file://$PROJECT_DIR$/OCR-A_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credit_card.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="177" column="14" lean-forward="true" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
+        <state relative-caret-position="3043">
+          <caret line="181" column="28" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc_recognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_DocRecognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
