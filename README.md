@@ -13,4 +13,4 @@
 2. [Исходный код проекта](/Source%20code)
 3. [Тестирование системы](/Testing)  
 3.1 [Тест план](/Testing/TestPlan.md)  
-3.2 [Результаты тестирования](/Testing/TestsResult.md)
+3.2 [Результаты тестирования](/Testing/TestsResults.md)
